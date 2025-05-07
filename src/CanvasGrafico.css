@@ -1,0 +1,261 @@
+
+  .grafico-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 2rem;
+  }
+  .foglio {
+  background: repeating-linear-gradient(
+    to bottom,
+    #fff,
+    #fff 19px,
+    #cceeff 20px
+  );
+  width: 500px;
+  height: 700px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.limiti-input {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.limiti-input label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.grafico-area {
+  width: 95%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grafico-canvas {
+  border: 1px solid #aaa;
+  background-color: white;
+}
+
+  
+  /* Oggetti scolastici */
+  .oggetti {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .righello-mm {
+    width: 50px;
+    height: 700px;
+    background: linear-gradient(to bottom, rgba(230, 250, 248, 0.587), rgba(210, 240, 235, 0.902));
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    position: relative;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow:
+      inset 0 0 4px rgba(255, 255, 255, 0.2),
+      0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  
+  .tacca {
+    position: absolute;
+    left: 2px;
+    height: 1px;
+    background-color: #333;
+  }
+  
+  .tacca.mm {
+    width: 6px;
+  }
+  
+  .tacca.mezzo {
+    width: 12px;
+  }
+  
+  .tacca.cm {
+    width: 18px;
+  }
+  
+  .tacca.cm .numero {
+    position: absolute;
+    left: 22px;
+    top: -6px;
+    font-size: 10px;
+    color: #222;
+  }
+  
+  
+  
+  
+  
+  
+  
+  .colonna-oggetti {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px; /* stessa altezza del righello */
+    gap: 1rem;
+  }
+  
+  .gomma {
+    width: 80px;
+    height: 40px;
+    background: linear-gradient(to right, white 50%, red 50%);
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    margin-bottom: 30px;
+  }
+  
+  .matita {
+    width: 12px;
+    height: 250px;
+    background: repeating-linear-gradient(
+      to bottom,
+      orange,
+      orange 20px,
+      black 20px,
+      black 30px
+    );
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  .matita::before {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 16px solid #e0c097;
+  }
+  
+  .matita::after {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: -1px;
+    width: 14px;
+    height: 16px;
+    background: red;
+    border-radius: 3px;
+  }
+  
+  .mina {
+    position: absolute;
+    bottom: -20px;
+    left: 4px;
+    width: 4px;
+    height: 4px;
+    background: black;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .quaderno-wrapper {
+    position: relative;
+    width:1000px;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 670px;
+  }
+  
+  .copertina-quaderno {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 8px;
+    border-radius: 16px;
+    background-color: #1565c0;
+    z-index: 0;
+    transform: translate(5px, 5px);
+  }
+  
+  .doppia-pagina {
+    display: flex;
+    background-color: #fafafa;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    height: 645px;
+    margin-left: 9px;
+
+  }
+  
+  .pagina-sinistra,
+  .pagina-destra {
+    width: 50%;
+    min-height: 360px;
+    padding: 1rem;
+    background-color: #fffefc;
+    box-sizing: border-box;
+    border-right: 1px dashed #ccc;
+  }
+  
+  .pagina-destra {
+    border-left: none;
+    border-right: none;
+  }
+  
+  .grafico-canvas {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+  }
+  
+  .limiti-input {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .limiti-input input {
+    width: 60px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+  }
+  .teoria-funzione {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 1rem;
+    background: repeating-linear-gradient(
+      to bottom,
+      #fffefc 0px,
+      #fffefc 19px,
+      #cceeff 20px
+    );
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: #222;
+  }
+  .teoria-funzione code {
+    background: #eef;
+    padding: 0 4px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+  }
+  

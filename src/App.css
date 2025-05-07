@@ -1,0 +1,28 @@
+.pagina {
+  display: flex;
+  height: 100vh;
+  background-color: #fffde7;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.colonna {
+  padding: 1rem;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+}
+
+.sinistra {
+  width: 25%;
+  background-color: #fff9c4;
+  box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.destra {
+  width: 80%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
