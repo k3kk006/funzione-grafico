@@ -12,34 +12,46 @@ export default function InputFunzione({ setDatiGrafico, limiti }) {
     }
   };
 
+
   const calcolaPunti = () => {
     try {
-      const expr = funzione.replace(/^y\s*=\s*/, '').replace(/[^-()\dx/*+.^√e\s]/g, '');
+      const expr = funzione.replace(/^y\s*=\s*/, '');
+  
       const jsExpr = expr
-        .replace(/\^/g, '**')
-        .replace(/√\(/g, 'Math.sqrt(')
+        .replace(/\^/g, '**') 
+        .replace(/√\(/g, 'Math.sqrt(') 
         .replace(/sin\(/g, 'Math.sin(')
         .replace(/cos\(/g, 'Math.cos(')
-        .replace(/log\(/g, 'Math.log10(')
-        .replace(/ln\(/g, 'Math.log(')
-        .replace(/e/g, 'Math.E');
+        .replace(/log\(/g, 'Math.log10(') 
+        .replace(/ln\(/g, 'Math.log(') 
+        .replace(/e/g, 'Math.E'); 
 
-      const f = new Function('x', `return ${jsExpr};`);
+      const passo = limiti.limiteX / 1000;
+  
       const punti = [];
-
-      for (let x = -limiti.limiteX; x <= limiti.limiteX; x += 0.1) {
-        const y = f(x);
-        if (!isNaN(y) && isFinite(y)) {
-          punti.push({ x, y });
+  
+      for (let x = -limiti.limiteX; x <= limiti.limiteX; x += passo) {
+        try {
+          const f = new Function('x', `return ${jsExpr};`);
+  
+          const y = f(x);
+  
+          if (typeof y === 'number' && isFinite(y)) {
+            punti.push({ x, y });
+          }
+        } catch (err) {
         }
       }
-
+  
       setDatiGrafico(punti);
-      console.log(punti)
+      console.log(punti);
     } catch (e) {
-      console.error('Errore nella funzione', e);
+      console.error('Errore nel calcolo dei punti:', e);
     }
   };
+  
+  
+  
 
   const tasti = [
     ['7', '8', '9', '*', '/'],
